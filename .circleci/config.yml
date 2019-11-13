@@ -44,6 +44,6 @@ workflows:
   main:
     jobs:
       - launchdarkly/find-code-references:
-        proj_key: "default"
-        repo_type: "github"
-        repo_url: "https://github.com/ethanve/circle-orbs-test"
+          proj_key: "default"
+          repo_type: "github"
+          repo_url: "https://github.com/ethanve/circle-orbs-test"
