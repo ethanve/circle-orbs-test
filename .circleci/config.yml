@@ -2,7 +2,11 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-version: 2
+version: 2.1
+
+orbs:
+  launchdarkly: launchdarkly/ld-find-code-refs@1.0.0
+
 jobs:
   build:
     docker:
@@ -35,3 +39,11 @@ jobs:
 
       # run tests!
       - run: yarn test
+
+workflows:
+  main:
+    jobs:
+      - launchdarkly/find-code-references:
+        proj_key: "default"
+        repo_type: "github"
+        repo_url: "https://github.com/ethanve/circle-orbs-test"
